@@ -1,0 +1,40 @@
+#div1 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  transition: background-color 2s ease-out, width 2s ease-out, height 2s ease-out, transform 2s ease-out;
+}
+.onClickedDiv {
+  width: 200px;
+  height: 200px;
+  -webkit-transform: (180deg);
+  transform: rotate(180deg);
+}
+
+#div2 {
+  width: 150px;
+  height: 100px;
+  background-color: green;
+}
+
+.animateClass {
+  animation: moved 4s ease-out forwards;
+}
+
+@keyframes moved {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(300px) scale(1.2);
+  }
+  75% {
+    transform: translateX(400px) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(400px) scale(1);
+    opacity: 0.1;
+  }
+}

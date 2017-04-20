@@ -14,6 +14,8 @@
   <button (click)="onAddElement()">Add Element</button>
   <button (click)="onDeleteElement()">Remove Element</button>
   <div 
-    @listState
     *ngFor="let testResult of testResults"
+    @listState
+    (@listState.start)="onAnimationStarted($event)"
+    (@listState.done)="onAnimationDone($event)"
     class="test-result">{{ testResult }}</div>

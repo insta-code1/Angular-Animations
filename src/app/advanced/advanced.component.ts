@@ -24,4 +24,12 @@ export class AdvancedComponent {
   onDeleteElement(){
     this.testResults.pop();
   }
+
+  onAnimationStarted(event: AnimationEvent) {
+    console.log(event);
+  }
+
+  onAnimationDone(event: AnimationEvent) {
+    console.log(event);
+  }
 }

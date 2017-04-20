@@ -13,6 +13,7 @@ import { UsersComponent } from './users/users.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TestComponent } from './test/test.component';
 import { AnimationsComponent } from './animations/animations.component';
+import { AdvancedComponent } from './advanced/advanced.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AnimationsComponent } from './animations/animations.component';
     NewProjectComponent,
     UsersComponent,
     TestComponent,
-    AnimationsComponent
+    AnimationsComponent,
+    AdvancedComponent
   ],
   imports: [
     BrowserModule,

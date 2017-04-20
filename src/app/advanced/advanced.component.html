@@ -1,0 +1,19 @@
+<button class="btn btn-primary" (click)="isShown = !isShown">Toggle Element</button>
+<br><br>
+<p 
+  @showState
+  *ngIf="isShown">You can see me now</p>
+  <br>
+  <br>
+  <button (click)="width = width -50">Shrink</button>
+  <button (click)="animate = true">Animate me</button>
+  <p
+    [@animateState]="animate ? 'animate' : 'noAnimation'" 
+    [ngStyle]="{'width.px': width}">Shrink me</p>
+  <hr>
+  <button (click)="onAddElement()">Add Element</button>
+  <button (click)="onDeleteElement()">Remove Element</button>
+  <div 
+    @showState
+    *ngFor="let testResult of testResults"
+    class="test-result">{{ testResult }}</div>

@@ -2,6 +2,7 @@
   border: 1px solid #ccc;
 }
 
+/*
 .marked {
   border: 2px solid blue;
   animation: marked 0.5s ease-out forwards;
@@ -18,6 +19,8 @@
     transform: scale(1)
   }
 }
+*/
+
 
 .loading-bar {
   width: 200px;

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { animateStateTriger, showStateTrigger } from './advanced.animations';
+import { animateStateTriger, listStateTrigger, showStateTrigger } from './advanced.animations';
 
 @Component({
   selector: 'app-advanced',
   templateUrl: './advanced.component.html',
   styleUrls: ['./advanced.component.css'],
   animations: [
-    showStateTrigger,
-    animateStateTriger
+    animateStateTriger,
+    listStateTrigger,
+    showStateTrigger
   ]
 })
 export class AdvancedComponent {
@@ -19,7 +20,7 @@ export class AdvancedComponent {
   onAddElement() {
     this.testResults.push(Math.random());
   }
-  
+
   onDeleteElement(){
     this.testResults.pop();
   }

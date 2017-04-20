@@ -14,6 +14,6 @@
   <button (click)="onAddElement()">Add Element</button>
   <button (click)="onDeleteElement()">Remove Element</button>
   <div 
-    @showState
+    @listState
     *ngFor="let testResult of testResults"
     class="test-result">{{ testResult }}</div>

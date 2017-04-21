@@ -1,3 +1,7 @@
+:host{ 
+  display: block;
+}
+
 #simple {
   width: 100px;
   height: 100px;

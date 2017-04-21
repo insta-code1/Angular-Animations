@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { HostBinding, Component, OnInit } from '@angular/core';
 import { animateStateTriger, listStateTrigger, showStateTrigger } from './advanced.animations';
+import { routerFadeStateTrigger, routerSlideStateTrigger } from '../shared/router-animations';
 
 @Component({
   selector: 'app-advanced',
@@ -8,10 +9,16 @@ import { animateStateTriger, listStateTrigger, showStateTrigger } from './advanc
   animations: [
     animateStateTriger,
     listStateTrigger,
-    showStateTrigger
+    showStateTrigger,
+    routerFadeStateTrigger,
+    routerSlideStateTrigger
   ]
 })
 export class AdvancedComponent {
+  // @HostBinding('@routerFadeState') routerAnimation = true;
+  @HostBinding('@routerSlideState') routerAnimation = true;
+
+
   isShown: Boolean = false;
   width: Number = 400;
   animate: Boolean = false;

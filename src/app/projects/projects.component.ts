@@ -4,7 +4,8 @@ import { ProjectsService } from './projects.service';
 import { AnimationEvent } from '@angular/animations';
 import { 
   markedTrigger,
-  itemStateTrigger  
+  itemStateTrigger,
+  slideStateTrigger
 } from './projects.animations';
 
 @Component({
@@ -13,7 +14,8 @@ import {
   styleUrls: ['./projects.component.css'],
   animations: [
     markedTrigger,
-    itemStateTrigger
+    itemStateTrigger,
+    slideStateTrigger
   ]
 })
 export class ProjectsComponent implements OnInit {
@@ -51,7 +53,9 @@ export class ProjectsComponent implements OnInit {
   onProjectCreated(project: Project) {
     this.createNew = false;
     // this.projects.push(project);
-    this.projects.unshift(project); // adds new element at start of array.
+    setTimeout(() => {
+      this.projects.unshift(project); // adds new element at start of array.
+    }, 300);
   }
 
   onItemAnimated(animationEvent: AnimationEvent, lastPrjIndex: number) {

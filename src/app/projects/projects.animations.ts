@@ -66,8 +66,58 @@ export const itemStateTrigger = trigger('itemState', [
         transform: 'translateX(100%)'
       })
     ]))
+  ]),
+  transition('slideUp => slideDown', [    // used for sliding elements up & down when the create project and cancel butten in triggered
+    style({
+      transform: 'translateY(-100%)'
+    }),
+    animate('300ms ease-out', style({
+      transform: 'translateY(0)'
+    }))
+  ]),
+  transition('slideDown => slideUp', [    // used for sliding elements up & down when the create project and cancel butten in triggered
+    animate('300ms ease-out', style({
+      transform: 'translateY(-100%)'
+    }))
   ])
 ]);
+
+export const slideStateTrigger = trigger('slideState', [
+  transition(':enter', [
+    style({
+      transform: 'translateY(-100%)'
+    }),
+    animate('300ms ease-out', style({
+      transform: 'translateY(0)'
+    }))
+  ]),
+  transition(':leave', [
+    animate('300ms ease-out', style({
+      transform: 'translateY(-100%)'
+    }))
+  ]),
+]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from './project.model';
 import { ProjectsService } from './projects.service';
-import { markedTrigger } from './projects.animations';
+import { 
+  markedTrigger,
+  itemStateTrigger  
+} from './projects.animations';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
   animations: [
-    markedTrigger
+    markedTrigger,
+    itemStateTrigger
   ]
 })
 export class ProjectsComponent implements OnInit {
@@ -35,11 +39,13 @@ export class ProjectsComponent implements OnInit {
   }
 
   onProjectDeleted(index: number) {
-    this.projects.splice(index, 1);
+    // this.projects.splice(index, 1); removes last elm of array
+    this.projects.shift(); // removes first elm of array
   }
 
   onProjectCreated(project: Project) {
     this.createNew = false;
-    this.projects.push(project);
+    // this.projects.push(project);
+    this.projects.unshift(project); // adds new element at start of array.
   }
 }
